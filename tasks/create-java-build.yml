@@ -5,7 +5,11 @@ image_resource:
   source: {repository: starkandwayne/concourse}
 
 inputs:
+  - name: testotester-source-code
   - name: pipeline-source-code
+
+outputs:
+  - name: app-build
   
 run:
-  path: pipeline-source-code/scripts/setup.sh
+  path: pipeline-source-code/scripts/create-java-build.sh

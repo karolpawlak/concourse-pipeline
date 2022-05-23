@@ -14,20 +14,19 @@ resources:
       private_key: ((private-key))
 
 jobs:
-  - name: build-app
+  - name: deploy-java-app
     serial: true
     public: true
     plan:
       - get: pipeline-source-code
-      - task: setup-environment
+      - get: testotester-source-code
+      - task: create-build
+        file: pipeline-source-code/tasks/create-java-build.yml
+      - task: deploy-app
         params:
           CF_API: ((cf-api))
           CF_ORG: ((cf-org))
           CF_SPACE: ((cf-space))
           CF_USER: ((cf-username))
           CF_PASS: ((cf-password))
-        file: pipeline-source-code/tasks/setup-environment.yml
-      - get: testotester-source-code
-      - task: create-build
-        file: pipeline-source-code/tasks/create-build.yml
-      
+        file: pipeline-source-code/tasks/deploy-app.yml
