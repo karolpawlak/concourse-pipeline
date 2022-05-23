@@ -5,27 +5,13 @@ echo "Creating a build"
 echo "------------------------------------------------"
 echo
 
-echo
-echo "------------------------------------------------"
-echo "Current directory"
-echo "------------------------------------------------"
-echo
-
 ls -l
 
 echo
 echo "------------------------------------------------"
-echo "Directories at ~/"
+echo "Change directory and create build"
 echo "------------------------------------------------"
 echo
 
-ls ~/
-
-echo
-echo "------------------------------------------------"
-echo "Change directory"
-echo "------------------------------------------------"
-echo
-
-cd testotester-source-code
-ls -l
+cd testotester-source-code/testotester-server
+./mvnw clean package -Dmaven.test.skip=true
