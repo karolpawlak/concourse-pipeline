@@ -9,4 +9,4 @@ inputs:
   - name: pipeline-source-code
   
 run:
-  path: testotester-source-code/scripts/build.sh
+  path: pipeline-source-code/scripts/build.sh
