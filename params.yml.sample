@@ -10,3 +10,5 @@ docker-password:
 cf-api:
 cf-username:
 cf-password:
+cf-org:
+cf-space:
