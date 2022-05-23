@@ -19,7 +19,6 @@ jobs:
     public: true
     plan:
       - get: pipeline-source-code
-      - get: testotester-source-code
       - task: setup-environment
         params:
           CF_API: ((cf-api))
@@ -28,6 +27,7 @@ jobs:
           CF_USER: ((cf-username))
           CF_PASS: ((cf-password))
         file: pipeline-source-code/tasks/setup-environment.yml
+      - get: testotester-source-code
       - task: create-build
         file: pipeline-source-code/tasks/create-build.yml
       

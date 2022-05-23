@@ -1,11 +1,12 @@
 #!/bin/sh
+
 echo
 echo "------------------------------------------------"
-echo "Creating a build"
+echo "Setup environment"
 echo "------------------------------------------------"
 echo
 
-ls -l
+apt-get update -y
 
 echo
 echo "------------------------------------------------"
@@ -18,7 +19,7 @@ java --version
 
 echo
 echo "------------------------------------------------"
-echo "Change directory and create build"
+echo "Creating a build"
 echo "------------------------------------------------"
 echo
 
