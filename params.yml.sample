@@ -1,0 +1,12 @@
+# Github access
+source-code-repo:
+private-key:
+
+#Docker Login
+docker-username:
+docker-password:
+
+#CF Login
+cf-api:
+cf-username:
+cf-password:

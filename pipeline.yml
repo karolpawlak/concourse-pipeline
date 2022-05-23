@@ -1,0 +1,23 @@
+---
+resources:
+  - name: source-code
+    type: git
+    source: 
+      uri: ((source-code-repo))
+      branch: main
+      private_key: ((private-key))
+
+jobs:
+  - name: build-app
+    serial: true
+    public: true
+    plan:
+      - get: source-code
+      - task: setup-environment
+        params:
+          CF_API: ((cf-api))
+          CF_ORG: ((cf-org))
+          CF_SPACE: ((cf-space))
+          CF_USER: ((cf-username))
+          CF_PASS: ((cf-password))
+        file: source-code/tasks/setup-environment.yml
