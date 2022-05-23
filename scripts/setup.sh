@@ -11,8 +11,14 @@ echo "# Updating the repository"
 echo
 apt-get update -y
 
-# Check for CF CLI
-cf help -a
-
 # Environmental variables
+echo
+echo "# Showing current environmental variables"
+echo
 env
+
+# Get CF CLI API endpoint
+echo
+echo "# Checking CF CLI API endpoint"
+echo
+cf api

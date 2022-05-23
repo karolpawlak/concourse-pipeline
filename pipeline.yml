@@ -1,9 +1,15 @@
 ---
 resources:
-  - name: source-code
+  - name: pipeline-source-code
     type: git
     source: 
-      uri: ((source-code-repo))
+      uri: ((pipeline-repo))
+      branch: main
+      private_key: ((private-key))
+  - name: testotester-source-code
+    type: git
+    source:
+      uri: ((testotester-repo))
       branch: main
       private_key: ((private-key))
 
@@ -12,7 +18,8 @@ jobs:
     serial: true
     public: true
     plan:
-      - get: source-code
+      - get: pipeline-source-code
+      - get: testotester-source-code
       - task: setup-environment
         params:
           CF_API: ((cf-api))
@@ -20,4 +27,7 @@ jobs:
           CF_SPACE: ((cf-space))
           CF_USER: ((cf-username))
           CF_PASS: ((cf-password))
-        file: source-code/tasks/setup-environment.yml
+        file: pipeline-source-code/tasks/setup-environment.yml
+      - task: create-build
+        file: pipeline-source-code/tasks/create-build.yml
+      
