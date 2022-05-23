@@ -13,7 +13,7 @@ echo "Installing JDK and JRE in order to run Java applications and applets"
 echo "------------------------------------------------"
 echo
 
-apt install openjdk-17-jdk openjdk-17-jre -y
+apt install default-jdk
 java --version
 
 echo
