@@ -37,8 +37,8 @@ echo "Creating a build"
 echo "------------------------------------------------"
 echo
 
-cd testotester-source-code/testotester-server
+cd ${RESOURCE_DIR}/${RESOURCE_DIR_2}
 ./mvnw clean package -Dmaven.test.skip=true
 
 cd ../
-cp -r testotester-server app-build
+cp -r ${RESOURCE_DIR_2} app-build

@@ -14,14 +14,17 @@ resources:
       private_key: ((private-key))
 
 jobs:
-  - name: deploy-java-app
+  - name: deploy-tt-server
     serial: true
     public: true
     plan:
       - get: pipeline-source-code
       - get: testotester-source-code
       - task: create-build
-        file: pipeline-source-code/tasks/create-java-build.yml
+        params:
+          RESOURCE_DIR: ((tt-resource-directory))
+          RESOURCE_DIR_2: ((testotester-server))
+        file: pipeline-source-code/tasks/create-java-build-2.yml
       - task: deploy-app
         params:
           CF_API: ((cf-api))
