@@ -17,3 +17,9 @@ echo
 echo "> Checking CF CLI API endpoint"
 echo
 cf api
+
+# Show current directory
+echo
+echo "> Showing current directory"
+echo
+ls -ltr

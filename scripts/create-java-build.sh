@@ -41,4 +41,4 @@ cd testotester-source-code/testotester-server
 ./mvnw clean package -Dmaven.test.skip=true
 
 cd ../
-cp testotester-server build
+cp -r testotester-server app-build
